@@ -37,7 +37,6 @@ app.use(
 		tempFileDir: "/tmp/",
 	})
 );
-
 // Connecting to cloudinary
 cloudinaryConnect();
 
