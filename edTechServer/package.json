@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "build": "echo \"Build completed successfully\" && exit 0"
+    "build": "npm install --production=false && echo \"Build completed successfully\"",
+    "render-build": "npm install --production=false"
   },
   "keywords": [],
   "author": "",
