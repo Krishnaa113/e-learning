@@ -23,7 +23,7 @@ module.exports = {
           600: "#424854",
           700: "#2C333F",
           800: "#161D29",
-          900: "#000814",
+          900: "#0A0E1A",
         },
         richblue: {
           5: "#ECF5FF",
@@ -123,11 +123,47 @@ module.exports = {
           800: "#171717",
           900: "#141414",
         },
+        // Modern gradient colors
+        primary: {
+          light: "#6366F1",
+          DEFAULT: "#4F46E5",
+          dark: "#4338CA",
+        },
+        accent: {
+          light: "#F59E0B",
+          DEFAULT: "#F97316",
+          dark: "#EA580C",
+        },
       },
       extend: {
         maxWidth: {
           maxContent: "1260px",
           maxContentTab: "650px"
+        },
+        backgroundImage: {
+          'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+          'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        },
+        animation: {
+          'gradient': 'gradient 15s ease infinite',
+          'float': 'float 6s ease-in-out infinite',
+          'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        },
+        keyframes: {
+          gradient: {
+            '0%, 100%': {
+              'background-size': '200% 200%',
+              'background-position': 'left center'
+            },
+            '50%': {
+              'background-size': '200% 200%',
+              'background-position': 'right center'
+            },
+          },
+          float: {
+            '0%, 100%': { transform: 'translateY(0px)' },
+            '50%': { transform: 'translateY(-20px)' },
+          },
         },
       },
     },

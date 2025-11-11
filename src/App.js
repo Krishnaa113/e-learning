@@ -35,7 +35,13 @@ function App() {
  
   const { user } = useSelector((state) => state.profile)
   return (
-    <div className="w-screen min-h-screen bg-richblack-900 font-inter flex flex-col">
+    <div className="w-screen min-h-screen animated-bg font-inter flex flex-col relative overflow-hidden">
+      {/* Animated gradient orbs */}
+      <div className="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary-light/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse-slow"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg-accent-light/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse-slow" style={{animationDelay: '2s'}}></div>
+        <div className="absolute -bottom-32 left-1/2 w-72 h-72 bg-pink-200/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse-slow" style={{animationDelay: '4s'}}></div>
+      </div>
      <Navbar/>
       <Routes>
        <Route path="/" element={<Home/>}/>

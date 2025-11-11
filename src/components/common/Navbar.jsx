@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import logo from "../../assets/Logo/Logo-Full-Light.png"
 import { Link, matchPath } from 'react-router-dom'
 import {NavbarLinks} from "../../data/navbar-links"
 import { useLocation } from 'react-router-dom'
@@ -70,32 +69,39 @@ const Navbar = () => {
     }
 
   return (
-    <div className='flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700'>
+    <div className='flex h-16 items-center justify-center border-b border-b-richblack-700/50 bg-richblack-900/80 backdrop-blur-xl sticky top-0 z-50 shadow-lg shadow-richblack-900/50'>
       <div className='flex w-11/12 max-w-maxContent items-center justify-between'>
-        {/* Image */}
-      <Link to="/">
-        <img src={logo} width={160} height={42} loading='lazy' alt="abc"/>
+        {/* Logo/Brand Name */}
+      <Link to="/" className="transition-transform duration-300 hover:scale-105 flex items-center">
+        <span className="text-2xl font-bold bg-gradient-to-r from-white via-richblack-5 to-richblack-25 bg-clip-text text-transparent">
+          EduFlow
+        </span>
       </Link>
       
 
       {/* Navigation links */}
       <nav className="hidden md:block">
-          <ul className="flex gap-x-6 text-richblack-25">
+          <ul className="flex gap-x-8 text-richblack-25">
           {NavbarLinks.map((link, index) => (
   <li key={index}>
     {link.title === "Catalog" ? (
       <>
         <div
-          className={`group relative flex cursor-pointer items-center gap-1 ${
+          className={`group relative flex cursor-pointer items-center gap-1 transition-all duration-300 ${
             matchRoute("/catalog/:catalogName")
-              ? "text-yellow-25"
-              : "text-richblack-25"
+              ? "text-yellow-50 font-semibold"
+              : "text-richblack-25 hover:text-yellow-50"
           }`}
         >
-          <p>{link.title}</p>
-          <BsChevronDown />
-          <div className="invisible absolute left-[50%] top-[50%] z-[1000] flex w-[200px] translate-x-[-50%] translate-y-[3em] flex-col rounded-lg bg-richblack-5 p-4 text-richblack-900 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[300px]">
-            <div className="absolute left-[50%] top-0 -z-10 h-6 w-6 translate-x-[80%] translate-y-[-40%] rotate-45 select-none rounded bg-richblack-5"></div>
+          <p className="relative">
+            {link.title}
+            <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-50 to-yellow-400 transition-all duration-300 ${
+              matchRoute("/catalog/:catalogName") ? "w-full" : "group-hover:w-full"
+            }`}></span>
+          </p>
+          <BsChevronDown className="transition-transform duration-300 group-hover:rotate-180" />
+          <div className="invisible absolute left-[50%] top-[50%] z-[1000] flex w-[200px] translate-x-[-50%] translate-y-[3em] flex-col rounded-xl bg-richblack-800/95 backdrop-blur-xl p-4 text-richblack-5 border border-richblack-700 shadow-2xl opacity-0 transition-all duration-300 group-hover:visible group-hover:translate-y-[1.65em] group-hover:opacity-100 lg:w-[300px]">
+            <div className="absolute left-[50%] top-0 -z-10 h-4 w-4 translate-x-[80%] translate-y-[-50%] rotate-45 select-none rounded-sm bg-richblack-800 border-l border-t border-richblack-700"></div>
             {console.log("subLinks:", subLinks)}
             {loading ? (
               <p className="text-center">Loading...</p>
@@ -111,10 +117,13 @@ const Navbar = () => {
           .split(" ")
           .join("-")
           .toLowerCase()}`}
-        className="rounded-lg bg-transparent py-4 pl-4 hover:bg-richblack-50"
+        className="rounded-lg bg-transparent py-3 px-4 hover:bg-primary-light/10 hover:text-primary-light transition-all duration-200 group/item"
         key={i}
       >
-        <p>{subLink.name}</p>
+        <p className="flex items-center gap-2">
+          <span className="w-0 h-0.5 bg-primary-light transition-all duration-200 group-hover/item:w-4"></span>
+          {subLink.name}
+        </p>
       </Link>
     );
   })}
@@ -126,15 +135,18 @@ const Navbar = () => {
         </div>
       </>
     ) : (
-      <Link to={link?.path}>
+      <Link to={link?.path} className="relative group">
         <p
-          className={`${
+          className={`transition-all duration-300 ${
             matchRoute(link?.path)
-              ? "text-yellow-25"
-              : "text-richblack-25"
+              ? "text-yellow-50 font-semibold"
+              : "text-richblack-25 hover:text-yellow-50"
           }`}
         >
           {link.title}
+          <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-yellow-50 to-yellow-400 transition-all duration-300 ${
+            matchRoute(link?.path) ? "w-full" : "w-0 group-hover:w-full"
+          }`}></span>
         </p>
       </Link>
     )}
@@ -145,10 +157,10 @@ const Navbar = () => {
    {/* Login / Signup / Dashboard */}
    <div className="hidden items-center gap-x-4 md:flex">
           {user && user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
-            <Link to="/dashboard/cart" className="relative">
-              <AiOutlineShoppingCart className="text-2xl text-richblack-100" />
+            <Link to="/dashboard/cart" className="relative transition-transform duration-300 hover:scale-110">
+              <AiOutlineShoppingCart className="text-2xl text-richblack-100 hover:text-yellow-50 transition-colors duration-300" />
               {totalItems > 0 && (
-                <span className="absolute -bottom-2 -right-2 grid h-5 w-5 place-items-center overflow-hidden rounded-full bg-richblack-600 text-center text-xs font-bold text-yellow-100">
+                <span className="absolute -bottom-2 -right-2 grid h-6 w-6 place-items-center overflow-hidden rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 text-center text-xs font-bold text-richblack-900 shadow-lg animate-pulse">
                   {totalItems}
                 </span>
               )}
@@ -156,14 +168,14 @@ const Navbar = () => {
           )}
           {token === null && (
             <Link to="/login">
-              <button className="rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100">
+              <button className="rounded-xl border border-richblack-700 bg-richblack-800/50 backdrop-blur-sm px-5 py-2.5 text-richblack-100 hover:bg-richblack-700 hover:border-richblack-600 transition-all duration-300 hover:scale-105 shadow-lg">
                 Log in
               </button>
             </Link>
           )}
           {token === null && (
             <Link to="/signup">
-              <button className="rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100">
+              <button className="rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 px-5 py-2.5 text-richblack-900 font-semibold hover:shadow-lg hover:shadow-yellow-500/50 transition-all duration-300 hover:scale-105">
                 Sign up
               </button>
             </Link>
@@ -182,7 +194,7 @@ const Navbar = () => {
 </button>
 
 {isMobileMenuOpen && (
-  <div className="absolute top-14 left-0 z-50 w-full bg-richblack-900 px-6 py-4 shadow-lg md:hidden">
+  <div className="absolute top-16 left-0 z-50 w-full bg-richblack-900/95 backdrop-blur-xl px-6 py-6 shadow-2xl border-b border-richblack-700 md:hidden animate-in slide-in-from-top duration-300">
     {/* Nav Links */}
     <ul className="flex flex-col gap-4 text-richblack-25">
       {NavbarLinks.map((link, index) => (

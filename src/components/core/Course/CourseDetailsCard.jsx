@@ -57,17 +57,19 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
   return (
     <>
       <div
-        className={`flex flex-col gap-4 rounded-md bg-richblack-700 p-4 text-richblack-5`}
+        className={`flex flex-col gap-6 rounded-2xl bg-gradient-to-br from-richblack-800 to-richblack-900 p-6 text-richblack-5 border border-richblack-700/50 shadow-2xl`}
       >
         {/* Course Image */}
-        <img
-          src={ThumbnailImage}
-          alt={course?.courseName}
-          className="max-h-[300px] min-h-[180px] w-[400px] overflow-hidden rounded-2xl object-cover md:max-w-full"
-        />
+        <div className="rounded-2xl overflow-hidden shadow-xl border border-richblack-700/50">
+          <img
+            src={ThumbnailImage}
+            alt={course?.courseName}
+            className="max-h-[300px] min-h-[180px] w-full overflow-hidden object-cover hover:scale-105 transition-transform duration-500"
+          />
+        </div>
 
-        <div className="px-4">
-          <div className="space-x-3 pb-4 text-3xl font-semibold">
+        <div className="px-2">
+          <div className="space-x-3 pb-4 text-3xl font-bold text-richblack-5">
             Rs. {CurrentPrice}
           </div>
           <div className="flex flex-col gap-4">
@@ -89,33 +91,33 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
               </button>
             )}
           </div>
-          <div>
-            <p className="pb-3 pt-6 text-center text-sm text-richblack-25">
-              30-Day Money-Back Guarantee
+          <div className="bg-yellow-50/10 border border-yellow-50/20 rounded-xl p-4 mt-4">
+            <p className="text-center text-sm text-richblack-25 font-medium">
+              ✨ 30-Day Money-Back Guarantee
             </p>
           </div>
 
-          <div className={``}>
-            <p className={`my-2 text-xl font-semibold `}>
+          <div className="mt-6">
+            <p className={`my-2 text-xl font-bold text-richblack-5 mb-4`}>
               This Course Includes :
             </p>
             <div className="flex flex-col gap-3 text-sm text-caribbeangreen-100">
               {course?.instructions?.map((item, i) => {
                 return (
-                  <p className={`flex gap-2`} key={i}>
-                    <BsFillCaretRightFill />
-                    <span>{item}</span>
+                  <p className={`flex gap-3 items-start`} key={i}>
+                    <BsFillCaretRightFill className="text-caribbeangreen-50 mt-1 flex-shrink-0" />
+                    <span className="text-richblack-200">{item}</span>
                   </p>
                 )
               })}
             </div>
           </div>
-          <div className="text-center">
+          <div className="text-center mt-6">
             <button
-              className="mx-auto flex items-center gap-2 py-6 text-yellow-100 "
+              className="mx-auto flex items-center gap-2 py-4 text-yellow-50 hover:text-yellow-100 transition-colors duration-300 font-medium"
               onClick={handleShare}
             >
-              <FaShareSquare size={15} /> Share
+              <FaShareSquare size={18} /> Share
             </button>
           </div>
         </div>

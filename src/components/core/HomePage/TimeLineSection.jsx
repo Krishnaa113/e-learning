@@ -10,7 +10,7 @@ const timeLine = [
     {
       Logo: Logo1,
       Heading: "Leadership",
-      Description: "Fully committed to the success company",
+      Description: "Fully committed to the success of the company",
     },
     {
       Logo: Logo2,
@@ -20,7 +20,7 @@ const timeLine = [
     {
       Logo: Logo3,
       Heading: "Flexibility",
-      Description: "The ability to switch is an important skills",
+      Description: "The ability to switch is an important skill",
     },
     {
       Logo: Logo4,
@@ -31,31 +31,31 @@ const timeLine = [
 
 const TimeLineSection = () => {
   return (
-<div>
-      <div className="flex flex-col lg:flex-row gap-15 items-center">
+<div className="bg-gradient-to-br from-purple-900 via-purple-800 to-purple-900 py-16">
+      <div className="flex flex-col lg:flex-row gap-15 items-center mx-auto w-9/12 max-w-maxContent">
 
-      <div className='lg:w-[45%] flex flex-col gap-14 lg:gap-3'>
+      <div className='lg:w-[45%] flex flex-col gap-8'>
   {
    timeLine.map((element , index)=>{
     return(
-       <div className="flex flex-col lg:gap-3" key={index}>
-       <div className='flex flex-row gap-6 ' key={index}>
+       <div className="flex flex-col" key={index}>
+       <div className='flex flex-row gap-6 items-start'>
 
-<div className='w-[50px] h-[50px] bg-white flex items-center'>
-  <img src={element.Logo}/>
+<div className='w-[60px] h-[60px] bg-white rounded-xl flex items-center justify-center shadow-lg flex-shrink-0'>
+  <img src={element.Logo} alt={element.Heading} className="w-8 h-8 object-contain"/>
 </div>
 
-<div>
- <h2 className="font-semibold text-[18px]">{element.Heading}</h2>
- <p className="text-base">{element.Description}</p>
+<div className="flex-1">
+ <h2 className="font-bold text-xl text-emerald-400 mb-2">{element.Heading}</h2>
+ <p className="text-base text-richblack-100 leading-relaxed">{element.Description}</p>
 </div>
             
 </div>
 
 <div
-         className={`hidden ${
-                    timeLine.length - 1 === index ? "hidden" : "lg:block"
-                  }  h-10 border-dotted border-l  border-richblack-100 bg-richblack-400/0 w-[26px]`}
+         className={`${
+                    timeLine.length - 1 === index ? "hidden" : "block"
+                  } h-8 border-dotted border-l-2 border-purple-400/30 ml-[30px] mt-4 mb-4`}
                 ></div>
        </div>
       

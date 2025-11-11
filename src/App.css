@@ -1,36 +1,36 @@
-/* write your css here */
+/* Modern E-Learning Platform Styles */
 
-
-html , body{
+html, body {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
- 
-/* ===== Scrollbar CSS ===== */
+
+/* ===== Modern Scrollbar CSS ===== */
 /* Firefox */
 * {
-  scrollbar-width: auto;
-  scrollbar-color: #afb2bf;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(99, 102, 241, 0.5) rgba(10, 14, 26, 0.1);
 }
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: 3px;
+  width: 8px;
+  height: 8px;
 }
 
 *::-webkit-scrollbar-track {
-  background: #000814;
+  background: rgba(10, 14, 26, 0.1);
+  border-radius: 10px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #afb2bf;
+  background: linear-gradient(180deg, #6366F1 0%, #8B5CF6 100%);
   border-radius: 10px;
-  visibility: hidden;
+  border: 2px solid rgba(10, 14, 26, 0.1);
 }
 
-*:active::-webkit-scrollbar-thumb,
-*:focus::-webkit-scrollbar-thumb,
-*:hover::-webkit-scrollbar-thumb {
-  visibility: visible;
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #4F46E5 0%, #7C3AED 100%);
 }
 
 /* Hide default styling of details/summary */
@@ -41,8 +41,7 @@ details > summary::-webkit-details-marker {
   display: none;
 }
 
-
-
+/* Modern Code Blocks with Glassmorphism */
 .codeblock1 {
     width: 372.95px;
     height: 257.05px;
@@ -51,14 +50,16 @@ details > summary::-webkit-details-marker {
     top: calc(50% - 257.05px / 2 - 47.47px);
     background: linear-gradient(
       123.77deg,
-      #8a2be2 -6.46%,
-      #ffa500 59.04%,
-      #f8f8ff 124.53%
+      #8B5CF6 -6.46%,
+      #F59E0B 59.04%,
+      #EC4899 124.53%
     );
-    opacity: 0.2;
-    filter: blur(34px);
+    opacity: 0.3;
+    filter: blur(60px);
     transform: matrix(1, 0, -0.03, 1, 0, 0);
+    animation: float 8s ease-in-out infinite;
   }
+  
   .codeblock2 {
     position: absolute;
     width: 372.95px;
@@ -68,141 +69,75 @@ details > summary::-webkit-details-marker {
     border-radius: 100%;
     background: linear-gradient(
       118.19deg,
-      #1fa2ff -3.62%,
-      #12d8fa 50.44%,
-      #a6ffcb 104.51%
+      #3B82F6 -3.62%,
+      #06B6D4 50.44%,
+      #10B981 104.51%
     );
-    opacity: 0.2;
-    filter: blur(34px);
+    opacity: 0.3;
+    filter: blur(60px);
     transform: matrix(1, 0, -0.03, 1, 0, 0);
+    animation: float 8s ease-in-out infinite reverse;
   }
+  
   .code-border {
     border: 2px solid;
     border-image-slice: 1;
     border-width: 2px;
-    border-image-source: linear-gradient(to right bottom, #ffffff38, #ffffff00);
+    border-image-source: linear-gradient(to right bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
     background: linear-gradient(
       111.93deg,
-      rgba(14, 26, 45, 0.24) -1.4%,
-      rgba(17, 30, 50, 0.38) 104.96%
+      rgba(99, 102, 241, 0.1) -1.4%,
+      rgba(139, 92, 246, 0.15) 104.96%
     );
-    /* backdrop-filter: blur(26px); */
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   }
 
-  .homepage_bg{
-
-   background: url("../src/assets/Images/bghome.svg");
+  .homepage_bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
   }
 
+  /* Modern Spinner */
   .spinner {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    border: 9px solid #f1f2ff;
-    animation: spinner-bulqg1 0.8s infinite linear alternate,
-      spinner-oaa3wk 1.6s infinite linear;
+    border: 4px solid rgba(99, 102, 241, 0.2);
+    border-top-color: #6366F1;
+    animation: spin 1s linear infinite;
   }
 
-  @keyframes spinner-bulqg1 {
-    0% {
-      clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) matrix(1, 0, -0.03, 1, 0, 0);
     }
-  
-    12.5% {
-      clip-path: polygon(
-        50% 50%,
-        0 0,
-        50% 0%,
-        100% 0%,
-        100% 0%,
-        100% 0%,
-        100% 0%
-      );
-    }
-  
-    25% {
-      clip-path: polygon(
-        50% 50%,
-        0 0,
-        50% 0%,
-        100% 0%,
-        100% 100%,
-        100% 100%,
-        100% 100%
-      );
-    }
-  
     50% {
-      clip-path: polygon(
-        50% 50%,
-        0 0,
-        50% 0%,
-        100% 0%,
-        100% 100%,
-        50% 100%,
-        0% 100%
-      );
-    }
-  
-    62.5% {
-      clip-path: polygon(
-        50% 50%,
-        100% 0,
-        100% 0%,
-        100% 0%,
-        100% 100%,
-        50% 100%,
-        0% 100%
-      );
-    }
-  
-    75% {
-      clip-path: polygon(
-        50% 50%,
-        100% 100%,
-        100% 100%,
-        100% 100%,
-        100% 100%,
-        50% 100%,
-        0% 100%
-      );
-    }
-  
-    100% {
-      clip-path: polygon(
-        50% 50%,
-        50% 100%,
-        50% 100%,
-        50% 100%,
-        50% 100%,
-        50% 100%,
-        0% 100%
-      );
+      transform: translateY(-30px) matrix(1, 0, -0.03, 1, 0, 0);
     }
   }
-  
-  @keyframes spinner-oaa3wk {
+
+  @keyframes gradient {
     0% {
-      transform: scaleY(1) rotate(0deg);
+      background-position: 0% 50%;
     }
-  
-    49.99% {
-      transform: scaleY(1) rotate(135deg);
-    }
-  
     50% {
-      transform: scaleY(-1) rotate(0deg);
+      background-position: 100% 50%;
     }
-  
     100% {
-      transform: scaleY(-1) rotate(-135deg);
+      background-position: 0% 50%;
     }
   }
   
   /* For conditional coloring of icons in dashboard sidebar */
   .active-icon {
-    fill: #ffd60a !important;
-    color: #ffd60a !important;
+    fill: #F59E0B !important;
+    color: #F59E0B !important;
   }
   
   .inactive-icon {
@@ -210,38 +145,64 @@ details > summary::-webkit-details-marker {
     color: #838894;
   }
   
-  /* Buttons */
+  /* Modern Buttons */
   .yellowButton {
-    @apply cursor-pointer rounded-md bg-yellow-50 px-[20px] py-[8px] font-semibold text-richblack-900;
+    @apply cursor-pointer rounded-xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 px-6 py-3 font-semibold text-richblack-900 shadow-lg shadow-yellow-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yellow-500/60;
   }
   
-  /* Swiper CSS Starts */
-  /* .swiper {
-    max-width: 1200px;
-    width: 91.66%;
-    height: 185px;
-    margin: 50px 0px;
-  } */
+  .blackButton {
+    @apply cursor-pointer rounded-xl bg-gradient-to-r from-richblack-800 to-richblack-900 px-6 py-3 font-semibold text-richblack-5 border border-richblack-700 shadow-lg transition-all duration-300 hover:scale-105 hover:border-richblack-600 hover:shadow-xl;
+  }
   
+  /* Modern Form Styles */
+  .lable-style {
+    @apply text-sm font-medium text-richblack-5 mb-2;
+  }
+  
+  .form-style {
+    @apply rounded-xl bg-richblack-800/50 backdrop-blur-sm p-4 text-base leading-6 text-richblack-5 border border-richblack-700 shadow-lg placeholder:text-richblack-400 focus:outline-none focus:ring-2 focus:ring-primary-light focus:border-transparent transition-all duration-300;
+  }
+  
+  .section_heading {
+    @apply text-3xl font-bold bg-gradient-to-r from-white via-richblack-5 to-richblack-25 bg-clip-text text-transparent lg:text-5xl;
+  }
+
+  /* Glassmorphism Effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+
+  /* Modern Card Hover Effect */
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Swiper Styles */
   .swiper-slide {
     width: 100%;
     height: 100%;
   }
-  /* .swiper-slide {
-    @apply bg-richblack-800 text-richblack-25 p-3 text-[14px];
-  } */
-  /* Swiper CSS Ends */
-  
-  .blackButton {
-    @apply cursor-pointer rounded-md bg-richblack-800 px-[20px] py-[8px] font-semibold text-richblack-5;
+
+  /* Gradient Text */
+  .gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-  .lable-style {
-    @apply text-[14px] text-richblack-5;
-  }
-  .form-style {
-    @apply rounded-lg bg-richblack-700 p-3 text-[16px] leading-[24px] text-richblack-5 shadow-[0_1px_0_0] shadow-white/50 placeholder:text-richblack-400 focus:outline-none;
-  }
-  .section_heading {
-    @apply text-2xl font-bold text-richblack-5 lg:text-4xl;
+
+  /* Animated Background */
+  .animated-bg {
+    background: linear-gradient(-45deg, #0A0E1A, #1a1f3a, #2d1b4e, #1a1f3a);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
   }
   

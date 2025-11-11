@@ -59,42 +59,42 @@ function Catalog() {
   return (
     <>
       {/* Hero Section */}
-      <div className=" box-content bg-richblack-800 px-4">
-        <div className="mx-auto flex min-h-[260px] max-w-maxContentTab flex-col justify-center gap-4 lg:max-w-maxContent ">
-          <p className="text-sm text-richblack-300">
+      <div className="box-content bg-gradient-to-br from-richblack-800 via-richblack-900 to-richblack-800 px-4 py-12 border-b border-richblack-700/50">
+        <div className="mx-auto flex min-h-[260px] max-w-maxContentTab flex-col justify-center gap-4 lg:max-w-maxContent">
+          <p className="text-sm text-richblack-300 mb-2">
             {`Home / Catalog / `}
-            <span className="text-yellow-25">
+            <span className="text-yellow-50 font-semibold">
               {catalogPageData?.data?.selectedCategory?.name}
             </span>
           </p>
-          <p className="text-3xl text-richblack-5">
+          <p className="text-4xl lg:text-5xl font-bold text-richblack-5 mb-2">
             {catalogPageData?.data?.selectedCategory?.name}
           </p>
-          <p className="max-w-[870px] text-richblack-200">
+          <p className="max-w-[870px] text-lg text-richblack-200 leading-relaxed">
             {catalogPageData?.data?.selectedCategory?.description}
           </p>
         </div>
       </div>
 
       {/* Section 1 */}
-      <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
-        <div className="section_heading text-richblack-50 text-[24px] font-semibold">Courses to get you started</div>
-        <div className="my-4 flex border-b border-b-richblack-600 text-sm">
+      <div className="mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
+        <div className="section_heading text-richblack-50 mb-6">Courses to get you started</div>
+        <div className="my-4 flex border-b border-b-richblack-600/50 text-sm">
           <p
-            className={`px-4 py-2 ${
+            className={`px-6 py-3 transition-all duration-300 ${
               active === 1
-                ? "border-b border-b-yellow-25 text-yellow-25"
-                : "text-richblack-50"
+                ? "border-b-2 border-b-yellow-50 text-yellow-50 font-semibold"
+                : "text-richblack-50 hover:text-richblack-25"
             } cursor-pointer`}
             onClick={() => setActive(1)}
           >
-            Most Populer
+            Most Popular
           </p>
           <p
-            className={`px-4 py-2 ${
+            className={`px-6 py-3 transition-all duration-300 ${
               active === 2
-                ? "border-b border-b-yellow-25 text-yellow-25"
-                : "text-richblack-50"
+                ? "border-b-2 border-b-yellow-50 text-yellow-50 font-semibold"
+                : "text-richblack-50 hover:text-richblack-25"
             } cursor-pointer`}
             onClick={() => setActive(2)}
           >
@@ -108,8 +108,8 @@ function Catalog() {
         </div>
       </div>
       {/* Section 2 */}
-      <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
-        <div className="section_heading text-richblack-50 text-[24px] font-semibold">
+      <div className="mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
+        <div className="section_heading text-richblack-50 mb-6">
           Top courses in {catalogPageData?.data?.differentCategory?.name}
         </div>
         <div className="py-8">
@@ -120,8 +120,8 @@ function Catalog() {
       </div>
 
       {/* Section 3 */}
-      <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
-        <div className="section_heading text-richblack-50 text-[24px] font-semibold">Frequently Bought</div>
+      <div className="mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
+        <div className="section_heading text-richblack-50 mb-6">Frequently Bought</div>
         <div className="py-8">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             {catalogPageData?.data?.mostSellingCourses
