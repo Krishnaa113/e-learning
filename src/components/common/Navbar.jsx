@@ -8,7 +8,6 @@ import ProfileDropDown from "../core/Auth/ProfileDropDown"
 import { apiConnector } from '../../services/apiConnector'
 import { categories } from '../../services/apis'
 import { useState } from 'react'
-import {IoIosArrowDropdownCircle} from "react-icons/io"
 import { BsChevronDown } from "react-icons/bs"
 import { ACCOUNT_TYPE } from "../../utils/constants"
 
@@ -39,7 +38,7 @@ const Navbar = () => {
 
 
    
-    const [loading, setLoading] = useState(false)
+    const [loading] = useState(false)
     const [subLinks, setSubLinks]  = useState([]);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isCatalogOpen, setIsCatalogOpen] = useState(false);

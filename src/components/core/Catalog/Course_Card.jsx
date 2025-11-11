@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react"
-// Icons
-import { FaRegStar, FaStar } from "react-icons/fa"
-import ReactStars from "react-rating-stars-component"
 import { Link } from "react-router-dom"
 
 import GetAvgRating from "../../../utils/avgRating"
 import RatingStars from "../../common/RatingStars"
 
+// eslint-disable-next-line react/jsx-pascal-case
 function Course_Card({ course, Height }) {
   // const avgReviewCount = GetAvgRating(course.ratingAndReviews)
   // console.log(course.ratingAndReviews)
@@ -48,4 +46,5 @@ function Course_Card({ course, Height }) {
   )
 }
 
+// eslint-disable-next-line react/jsx-pascal-case
 export default Course_Card

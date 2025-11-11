@@ -1,6 +1,6 @@
 import "./App.css";
 import {Route , Routes} from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Navbar from "./components/common/Navbar";

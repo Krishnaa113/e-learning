@@ -5,7 +5,9 @@ import { useParams } from "react-router-dom"
 // import CourseCard from "../components/Catalog/CourseCard"
 // import CourseSlider from "../components/Catalog/CourseSlider"
 import Footer from "../components/common/Footer"
+// eslint-disable-next-line react/jsx-pascal-case
 import Course_Card from "../components/core/Catalog/Course_Card"
+// eslint-disable-next-line react/jsx-pascal-case
 import Course_Slider from "../components/core/Catalog/Course_Slider"
 import { apiConnector } from "../services/apiConnector"
 import { categories } from "../services/apis"
@@ -102,6 +104,7 @@ function Catalog() {
           </p>
         </div>
         <div>
+          {/* eslint-disable-next-line react/jsx-pascal-case */}
           <Course_Slider
             Courses={catalogPageData?.data?.selectedCategory?.courses}
           />
@@ -113,6 +116,7 @@ function Catalog() {
           Top courses in {catalogPageData?.data?.differentCategory?.name}
         </div>
         <div className="py-8">
+          {/* eslint-disable-next-line react/jsx-pascal-case */}
           <Course_Slider
             Courses={catalogPageData?.data?.differentCategory?.courses}
           />
@@ -127,6 +131,7 @@ function Catalog() {
             {catalogPageData?.data?.mostSellingCourses
               ?.slice(0, 4)
               .map((course, i) => (
+                // eslint-disable-next-line react/jsx-pascal-case
                 <Course_Card course={course} key={i} Height={"h-[400px]"} />
               ))}
           </div>

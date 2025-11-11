@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react"
 
@@ -12,8 +12,10 @@ import "swiper/css/pagination"
 import { FreeMode, Pagination } from "swiper/modules"
 
 // import { getAllCourses } from "../../services/operations/courseDetailsAPI"
+// eslint-disable-next-line react/jsx-pascal-case
 import Course_Card from "./Course_Card"
 
+// eslint-disable-next-line react/jsx-pascal-case
 function Course_Slider({ Courses }) {
   return (
     <>
@@ -32,6 +34,7 @@ function Course_Slider({ Courses }) {
         >
           {Courses?.map((course, i) => (
             <SwiperSlide key={i}>
+              {/* eslint-disable-next-line react/jsx-pascal-case */}
               <Course_Card course={course} Height={"h-[250px]"} />
             </SwiperSlide>
           ))}
@@ -43,4 +46,5 @@ function Course_Slider({ Courses }) {
   )
 }
 
+// eslint-disable-next-line react/jsx-pascal-case
 export default Course_Slider
