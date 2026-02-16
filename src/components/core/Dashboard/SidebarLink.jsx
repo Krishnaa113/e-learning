@@ -3,7 +3,7 @@ import { NavLink, matchPath, useLocation } from "react-router-dom"
 
 
 
-export default function SidebarLink({ link, iconName }) {
+export default function SidebarLink({ link, iconName, onClick }) {
   const Icon = Icons[iconName]
   const location = useLocation()
   // const dispatch = useDispatch()
@@ -15,7 +15,7 @@ export default function SidebarLink({ link, iconName }) {
   return (
     <NavLink
       to={link.path}
-      
+      onClick={onClick}
       className={`relative px-8 py-2 text-sm font-medium ${
         matchRoute(link.path)
           ? "bg-yellow-800 text-yellow-50"

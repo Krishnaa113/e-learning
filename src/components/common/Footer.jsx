@@ -25,11 +25,11 @@ const Community = ["Forums", "Chapters", "Events"];
 const Footer = () => {
   return (
     <div className="bg-gradient-to-br from-richblack-900 via-richblack-800 to-richblack-900 border-t border-richblack-700/50">
-      <div className="flex lg:flex-row gap-8 items-center justify-between w-11/12 max-w-maxContent text-richblack-400 leading-6 mx-auto relative py-16">
-        <div className="border-b w-[100%] flex flex-col lg:flex-row pb-8 border-richblack-700/50">
+      <div className="flex lg:flex-row gap-6 sm:gap-8 items-start justify-between w-11/12 max-w-maxContent text-richblack-400 leading-6 mx-auto relative py-8 sm:py-12 lg:py-16 px-4 sm:px-0">
+        <div className="border-b w-[100%] flex flex-col lg:flex-row pb-6 sm:pb-8 border-richblack-700/50">
           {/* Section 1 */}
-          <div className="lg:w-[50%] flex flex-wrap flex-row justify-between lg:border-r lg:border-richblack-700 pl-3 lg:pr-5 gap-3">
-            <div className="w-[30%] flex flex-col gap-4 lg:w-[30%] mb-7 lg:pl-0">
+          <div className="lg:w-[50%] flex flex-wrap flex-row justify-between lg:border-r lg:border-richblack-700 pl-0 lg:pl-3 lg:pr-5 gap-4 sm:gap-3">
+            <div className="w-full sm:w-[48%] lg:w-[30%] flex flex-col gap-4 mb-6 sm:mb-7 lg:pl-0">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-light to-accent-light flex items-center justify-center shadow-lg">
                   <span className="text-richblack-900 font-bold text-xl">E</span>
@@ -64,8 +64,8 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="w-[48%] lg:w-[30%] mb-7 lg:pl-0">
-              <h1 className="text-richblack-50 font-bold text-lg mb-3">
+            <div className="w-full sm:w-[48%] lg:w-[30%] mb-6 sm:mb-7 lg:pl-0">
+              <h1 className="text-richblack-50 font-bold text-base sm:text-lg mb-3">
                 Resources
               </h1>
 
@@ -96,8 +96,8 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="w-[48%] lg:w-[30%] mb-7 lg:pl-0">
-              <h1 className="text-richblack-50 font-bold text-lg mb-3">
+            <div className="w-full sm:w-[48%] lg:w-[30%] mb-6 sm:mb-7 lg:pl-0">
+              <h1 className="text-richblack-50 font-bold text-base sm:text-lg mb-3">
                 Plans
               </h1>
 
@@ -139,11 +139,11 @@ const Footer = () => {
           </div>
 
           {/* Section 2 */}
-          <div className="lg:w-[50%] flex flex-wrap flex-row justify-between pl-3 lg:pl-5 gap-3">
+          <div className="lg:w-[50%] flex flex-wrap flex-row justify-between pl-0 lg:pl-5 gap-4 sm:gap-3 mt-6 lg:mt-0">
             {FooterLink2.map((ele, i) => {
               return (
-                <div key={i} className="w-[48%] lg:w-[30%] mb-7 lg:pl-0">
-                  <h1 className="text-richblack-50 font-bold text-lg mb-3">
+                <div key={i} className="w-full sm:w-[48%] lg:w-[30%] mb-6 sm:mb-7 lg:pl-0">
+                  <h1 className="text-richblack-50 font-bold text-base sm:text-lg mb-3">
                     {ele.title}
                   </h1>
                   <div className="flex flex-col gap-3 mt-2">
@@ -168,10 +168,10 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex flex-row items-center justify-between w-11/12 max-w-maxContent text-richblack-400 mx-auto pb-12 text-sm border-t border-richblack-700/50 pt-8">
+      <div className="flex flex-row items-center justify-between w-11/12 max-w-maxContent text-richblack-400 mx-auto pb-8 sm:pb-12 text-xs sm:text-sm border-t border-richblack-700/50 pt-6 sm:pt-8 px-4 sm:px-0">
         {/* Section 1 */}
         <div className="flex justify-between lg:items-start items-center flex-col lg:flex-row gap-4 w-full">
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
             {BottomFooter.map((ele, i) => {
               return (
                 <div

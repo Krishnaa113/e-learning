@@ -19,15 +19,15 @@ export default function DeleteAccount() {
 
   return (
     <>
-      <div className="my-10 flex flex-row gap-x-5 rounded-md border-[1px] border-pink-700 bg-pink-900 p-8 px-12">
-        <div className="flex aspect-square h-14 w-14 items-center justify-center rounded-full bg-pink-700">
-          <FiTrash2 className="text-3xl text-pink-200" />
+      <div className="my-6 sm:my-8 lg:my-10 flex flex-col sm:flex-row gap-4 sm:gap-x-5 rounded-md border-[1px] border-pink-700 bg-pink-900 p-4 sm:p-6 lg:p-8 px-4 sm:px-6 lg:px-12">
+        <div className="flex aspect-square h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-pink-700 flex-shrink-0">
+          <FiTrash2 className="text-2xl sm:text-3xl text-pink-200" />
         </div>
-        <div className="flex flex-col space-y-2">
-          <h2 className="text-lg font-semibold text-richblack-5">
+        <div className="flex flex-col space-y-2 flex-1 min-w-0">
+          <h2 className="text-base sm:text-lg font-semibold text-richblack-5">
             Delete Account
           </h2>
-          <div className="w-3/5 text-pink-25">
+          <div className="w-full sm:w-3/5 text-sm sm:text-base text-pink-25">
             <p>Would you like to delete account?</p>
             <p>
               This account may contain Paid Courses. Deleting your account is
@@ -36,7 +36,7 @@ export default function DeleteAccount() {
           </div>
           <button
             type="button"
-            className="w-fit cursor-pointer italic text-pink-300"
+            className="w-full sm:w-fit cursor-pointer italic text-sm sm:text-base text-pink-300 hover:text-pink-200 transition-colors"
             onClick={handleDeleteAccount}
           >
             I want to delete my account.

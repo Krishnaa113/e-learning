@@ -68,11 +68,11 @@ const Navbar = () => {
     }
 
   return (
-    <div className='flex h-16 items-center justify-center border-b border-b-richblack-700/50 bg-richblack-900/80 backdrop-blur-xl sticky top-0 z-50 shadow-lg shadow-richblack-900/50'>
-      <div className='flex w-11/12 max-w-maxContent items-center justify-between'>
+    <div className='flex h-14 sm:h-16 items-center justify-center border-b border-b-richblack-700/50 bg-richblack-900/80 backdrop-blur-xl sticky top-0 z-50 shadow-lg shadow-richblack-900/50'>
+      <div className='flex w-11/12 max-w-maxContent items-center justify-between px-2 sm:px-0'>
         {/* Logo/Brand Name */}
       <Link to="/" className="transition-transform duration-300 hover:scale-105 flex items-center">
-        <span className="text-2xl font-bold bg-gradient-to-r from-white via-richblack-5 to-richblack-25 bg-clip-text text-transparent">
+        <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-white via-richblack-5 to-richblack-25 bg-clip-text text-transparent">
           EduFlow
         </span>
       </Link>

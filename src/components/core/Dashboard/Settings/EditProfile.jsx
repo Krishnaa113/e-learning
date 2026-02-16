@@ -31,11 +31,11 @@ export default function EditProfile() {
     <>
       <form onSubmit={handleSubmit(submitProfileForm)}>
         {/* Profile Information */}
-        <div className="my-10 flex flex-col gap-y-6 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12">
-          <h2 className="text-lg font-semibold text-richblack-5">
+        <div className="my-6 sm:my-8 lg:my-10 flex flex-col gap-y-4 sm:gap-y-6 rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-4 sm:p-6 lg:p-8 px-4 sm:px-6 lg:px-12">
+          <h2 className="text-base sm:text-lg font-semibold text-richblack-5">
             Profile Information
           </h2>
-          <div className="flex flex-col gap-5 lg:flex-row">
+          <div className="flex flex-col gap-4 sm:gap-5 lg:flex-row">
             <div className="flex flex-col gap-2 lg:w-[48%]">
               <label htmlFor="firstName" className="lable-style text-richblack-25 ">
                 First Name
@@ -181,16 +181,20 @@ export default function EditProfile() {
           </div>
         </div>
 
-        <div className="flex justify-end gap-2">
+        <div className="flex flex-col sm:flex-row justify-end gap-3 sm:gap-2 mt-6 sm:mt-4">
           <button
             onClick={() => {
               navigate("/dashboard/my-profile")
             }}
-            className="cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-semibold text-richblack-50"
+            className="cursor-pointer rounded-md bg-richblack-700 py-2 px-4 sm:px-5 font-semibold text-sm sm:text-base text-richblack-50 w-full sm:w-auto"
           >
             Cancel
           </button>
-          <IconBtn type="submit" text="Save" />
+          <IconBtn 
+            type="submit" 
+            text="Save" 
+            customClasses="w-full sm:w-auto"
+          />
         </div>
       </form>
     </>

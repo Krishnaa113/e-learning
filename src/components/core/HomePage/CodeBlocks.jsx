@@ -9,14 +9,14 @@ const CodeBlocks = ({position , heading , subheading , ctabtn1 , ctabtn2, codebl
   return (
     <div  className={`flex ${position} my-20 justify-between flex-col lg:gap-10 gap-10`}>
         {/*section1*/}
-        <div className="w-[100%] lg:w-[50%] flex flex-col gap-8">
+        <div className="w-[100%] lg:w-[50%] flex flex-col gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-0">
 
-             {heading}
-             <div className="text-richblack-300 font-bold">
+             <div className="text-2xl sm:text-3xl lg:text-4xl">{heading}</div>
+             <div className="text-sm sm:text-base lg:text-lg text-richblack-300 font-bold">
                 {subheading}
              </div>
 
-        <div className="flex gap-7 mt-7">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-7 mt-4 sm:mt-7">
   
         <CTAButton active={ctabtn1.active} linkto={ctabtn1.linkto}>
             <div className="flex gap-2 items-center">
@@ -38,7 +38,7 @@ const CodeBlocks = ({position , heading , subheading , ctabtn1 , ctabtn2, codebl
         </div> 
 
         {/* Section 2 */}
-      <div className="h-fit code-border flex flex-row py-3 text-[10px] sm:text-sm leading-[18px] sm:leading-6 relative w-[100%] lg:w-[470px]">
+      <div className="h-fit code-border flex flex-row py-3 text-[10px] sm:text-sm leading-[18px] sm:leading-6 relative w-[100%] lg:w-[470px] mx-4 sm:mx-0">
         {backgroundGradient}
         {/* Indexing */}
         <div className="text-center flex flex-col   w-[10%] select-none text-richblack-400 font-inter font-bold ">

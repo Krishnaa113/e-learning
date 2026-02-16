@@ -16,7 +16,7 @@ const Home=()=>{
     return(
         <div className="relative"> 
             {/*Section 1 - Modern Hero Section*/}
-            <div className="mx-auto relative flex flex-col w-9/12 items-center max-w-maxContent text-white justify-between pt-8 pb-16">
+            <div className="mx-auto relative flex flex-col w-11/12 sm:w-10/12 lg:w-9/12 items-center max-w-maxContent text-white justify-between pt-4 sm:pt-8 pb-8 sm:pb-16 px-4 sm:px-0">
 
           <Link to={"/signup"}>
             <div  className="mt-16 p-1 mx-auto rounded-full bg-gradient-to-r from-richblack-800 to-richblack-900 font-bold text-richblack-200 
@@ -28,24 +28,24 @@ const Home=()=>{
             </div>
                 </Link>
 
-            <div className="text-center text-5xl lg:text-6xl font-bold mt-10 leading-tight"> 
+            <div className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-6 sm:mt-10 leading-tight px-2"> 
                 Empower your future With
                 <br/>
                 <HighlightText text={"Coding Skills"}/>
             </div>
 
-            <div className="mt-6 w-[90%] text-center text-lg lg:text-xl text-richblack-300 leading-relaxed">
+            <div className="mt-4 sm:mt-6 w-full sm:w-[90%] text-center text-base sm:text-lg lg:text-xl text-richblack-300 leading-relaxed px-2">
                 With our online coding courses, you can learn at your own pace, from anywhere in the world and get access of wealth of resources, including hands-on projects, quizzes and personalized feedback from instructors. 
             </div>
 
-            <div className="flex flex-row gap-6 mt-10"> 
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-6 sm:mt-10 w-full sm:w-auto px-4 sm:px-0"> 
                 <CTAButton active={true} linkto={"/signup"}>Start Learning</CTAButton>
                 <CTAButton active={false} linkto={"/login"}>Book a Demo</CTAButton>
             </div>
 
-            <div className="relative mx-3 my-16 group">
-                <div className="absolute -inset-4 bg-gradient-to-r from-primary-light via-accent-light to-pink-200 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-richblack-700/50">
+            <div className="relative mx-2 sm:mx-3 my-8 sm:my-12 lg:my-16 group w-full">
+                <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-primary-light via-accent-light to-pink-200 rounded-2xl sm:rounded-3xl blur-xl sm:blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+                <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-richblack-700/50">
                     <video width={900} height={500} className="w-full h-auto"
                     loop
                     muted
@@ -119,17 +119,17 @@ const Home=()=>{
         <ExploreMore />
             </div>
 
-          <div className="mx-auto w-9/12 max-w-maxContent flex flex-col items-center justify-between gap-10 py-16">
+          <div className="mx-auto w-11/12 sm:w-10/12 lg:w-9/12 max-w-maxContent flex flex-col items-center justify-between gap-8 sm:gap-10 py-8 sm:py-12 lg:py-16 px-4 sm:px-0">
 
-          <div className="flex flex-col lg:flex-row lg:gap-12 gap-8 mt-8 mb-12">
+          <div className="flex flex-col lg:flex-row lg:gap-12 gap-6 sm:gap-8 mt-6 sm:mt-8 mb-8 sm:mb-12 px-4 sm:px-0">
 
-             <div className="text-4xl lg:text-5xl font-bold lg:w-[50%] leading-tight">
+             <div className="text-3xl sm:text-4xl lg:text-5xl font-bold lg:w-[50%] leading-tight">
              Get the skills you need for a{" "}
              <HighlightText text={"job that is in demand."} />
              </div>
 
-             <div className="flex flex-col items-start gap-8 lg:w-[50%]">
-              <div className="text-lg text-richblack-300 leading-relaxed">
+             <div className="flex flex-col items-start gap-6 sm:gap-8 lg:w-[50%]">
+              <div className="text-base sm:text-lg text-richblack-300 leading-relaxed">
                 The modern e-learning platform dictates its own terms. Today, to
                 be a competitive specialist requires more than professional
                 skills.
@@ -147,20 +147,20 @@ const Home=()=>{
           </div>
 
             {/*Section 3 - Enhanced Reviews Section*/}
-           <div className="w-full mx-auto flex-col items-center justify-between gap-12
-           bg-gradient-to-br from-richblack-900 via-purple-900/20 to-richblack-900 text-white py-20 relative overflow-hidden">
+           <div className="w-full mx-auto flex-col items-center justify-between gap-8 sm:gap-12
+           bg-gradient-to-br from-richblack-900 via-purple-900/20 to-richblack-900 text-white py-12 sm:py-16 lg:py-20 relative overflow-hidden">
            {/* Purple gradient overlay */}
            <div className="absolute inset-0 bg-gradient-to-r from-purple-900/10 via-transparent to-purple-900/10 pointer-events-none"></div>
            
-           <div className="relative z-10 w-9/12 max-w-maxContent mx-auto">
+           <div className="relative z-10 w-11/12 sm:w-10/12 lg:w-9/12 max-w-maxContent mx-auto px-4 sm:px-0">
              <InstructorSection/>
 
              {/* Reviews from Other Learners */}
-             <div className="mt-16">
-               <h1 className="text-center text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-richblack-5 to-richblack-25 bg-clip-text text-transparent">
+             <div className="mt-8 sm:mt-12 lg:mt-16">
+               <h1 className="text-center text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-white via-richblack-5 to-richblack-25 bg-clip-text text-transparent px-2">
                  Reviews from other learners
                </h1>
-               <p className="text-center text-richblack-300 mb-12 text-lg">See what our students are saying</p>
+               <p className="text-center text-richblack-300 mb-8 sm:mb-12 text-base sm:text-lg px-2">See what our students are saying</p>
                <ReviewSlider />
              </div>
            </div>

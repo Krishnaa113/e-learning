@@ -21,7 +21,7 @@ function Dashboard() {
 
       <div className="h-[calc(100vh-3.5rem)] flex-1 overflow-auto">
 
-        <div className="mx-auto w-11/12 max-w-[1000px] py-10">
+        <div className="mx-auto w-11/12 sm:w-10/12 max-w-[1000px] py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-0">
           <Outlet />
         </div>
         
