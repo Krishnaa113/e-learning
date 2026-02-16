@@ -9,9 +9,9 @@ process.env.INLINE_RUNTIME_CHUNK = 'false';
 
 console.log('Starting build process...');
 
-// Run react-scripts build
+// Use npx to run react-scripts from local node_modules
 try {
-  execSync('CI=false GENERATE_SOURCEMAP=false INLINE_RUNTIME_CHUNK=false react-scripts build', { stdio: 'inherit' });
+  execSync('npx react-scripts build', { stdio: 'inherit' });
   console.log('Build completed successfully!');
 } catch (error) {
   console.error('Build failed:', error);
