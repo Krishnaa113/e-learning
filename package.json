@@ -37,7 +37,7 @@
   "author": "Your Name",
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI=false GENERATE_SOURCEMAP=false INLINE_RUNTIME_CHUNK=false react-scripts build",
+    "build": "node scripts/build.js",
     "eject": "react-scripts eject",
     "server": "cd edTechserver && npm run dev",
     "dev": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm start\" \"npm run server\"",
